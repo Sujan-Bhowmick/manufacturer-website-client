@@ -1,0 +1,14 @@
+.banner{
+    position: relative;
+}
+
+.banner1{
+    position: absolute;
+    top: 60px;
+    left: 30px;
+}
+
+.banner2{
+    position: absolute;
+   right: 20px;
+}
