@@ -1,7 +1,8 @@
 [
     {
       "_id": "6312d0b9c49d13e3ed378e74",
-      "quantity": 0,
+      "available_quantity": 0,
+      "minimum_order_quantity": 100,
       "img": "https://i.ibb.co/3FnDPmV/car1.jpg",
       "price": 27,
       "name": "Transmisson",
@@ -10,7 +11,8 @@
     },
     {
       "_id": "6312d0b931705cf65140bde8",
-      "quantity": 1,
+      "available_quantity": 1,
+      "minimum_order_quantity": 100,
       "img": "https://i.ibb.co/dQRLz32/car2.jpg",
       "price": 24,
       "name": "Radiator",
@@ -19,7 +21,8 @@
     },
     {
       "_id": "6312d0b972daf1646c724a2a",
-      "quantity": 2,
+      "available_quantity": 2,
+      "minimum_order_quantity": 100,
       "img": "https://i.ibb.co/hKXQmqq/car3.jpg",
       "price": 21,
       "name": "Front Axales",
@@ -28,7 +31,8 @@
     },
     {
       "_id": "6312d0b922516e2a14d5b4d5",
-      "quantity": 3,
+      "available_quantity": 3,
+      "minimum_order_quantity": 100,
       "img": "https://i.ibb.co/R656YLM/car4.jpg",
       "price": 31,
       "name": "Alternator",
@@ -37,7 +41,8 @@
     },
     {
       "_id": "6312d0b98455f9c4a3b67dce",
-      "quantity": 6,
+      "available_quantity": 6,
+      "minimum_order_quantity": 100,
       "img": "https://i.ibb.co/zSx1nDp/download-1.jpg",
       "price": 32,
       "name": "Brakes",
@@ -48,7 +53,8 @@
    
     {
       "_id": "6312d0b98455f9c4a3b67dcf",
-      "quantity": 6,
+      "available_quantity": 6,
+      "minimum_order_quantity": 100,
       "img": "https://i.ibb.co/41VNwD3/car6.jpg",
       "price": 32,
       "name": "Muffler",
@@ -57,7 +63,8 @@
     },
     {
       "_id": "6312d0b98455f9c4a3b67dcg",
-      "quantity": 6,
+      "available_quantity": 6,
+      "minimum_order_quantity": 100,
       "img": "https://i.ibb.co/1Z0MHp8/car15.jpg",
       "price": 32,
       "name": "Fuel Tank",
@@ -66,7 +73,8 @@
     },
     {
       "_id": "6312d0b9a632f0ad0fafbb24",
-      "quantity": 4,
+      "available_quantity": 4,
+      "minimum_order_quantity": 100,
       "img": "https://i.ibb.co/bmxcp8w/car7.jpg",
       "price": 22,
       "name": "Rear Axale",
