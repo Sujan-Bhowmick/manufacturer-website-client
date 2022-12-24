@@ -29,6 +29,7 @@ const SignUp = () => {
     }
 
     if (user || gUser) {
+        navigate('/')
         console.log(user);
     }
     const onSubmit = async (data) => {

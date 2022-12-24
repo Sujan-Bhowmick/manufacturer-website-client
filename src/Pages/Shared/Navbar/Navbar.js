@@ -14,8 +14,10 @@ const Navbar = () => {
         <li><Link to="/review">Review</Link></li>
         <li><Link to="/about">About</Link></li>
         <li><Link to="/blogs">Blogs</Link></li>
-        <li><Link to="/dashboard">Dashboard</Link></li>
-        <li>{user? <button className='btn btn-ghost' onClick={logout}>Sign Out</button> : <Link to="/login">Login</Link>}</li>
+        {
+            user && <li><Link to="/dashboard">Dashboard</Link></li>
+        }
+        <li>{user ? <button className='btn btn-ghost' onClick={logout}>Sign Out</button> : <Link to="/login">Login</Link>}</li>
     </>
     return (
         <div className="navbar bg-red-500">
@@ -35,7 +37,11 @@ const Navbar = () => {
                     {menuItems}
                 </ul>
             </div>
-
+            <div className='navbar-end md:hidden'>
+                <label htmlFor="my-drawer-3" className="btn btn-square btn-ghost">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-6 h-6 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </label>
+            </div>
         </div>
     );
 };
