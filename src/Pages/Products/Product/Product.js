@@ -1,8 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import PrimaryButton from '../../Shared/PrimaryButton';
 
-const Product = ({ product }) => {
-    const { _id, name, img, available_quantity, minimum_order_quantity, price, description } = product;
+const Product = ({ product, setTreatment }) => {
+    const { _id, name, img, available_quantity, minimum_order_quantity, price } = product;
 
     const navigate = useNavigate();
     const navigateToProductDetails = id => {

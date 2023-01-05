@@ -4,6 +4,7 @@ import Product from '../Product/Product';
 
 const Products = () => {
     const [products, setProducts] = useState([]);
+    const [treatment, setTreatment] = useState(null);
 
     useEffect(() => {
         fetch('http://localhost:5001/product')
@@ -17,6 +18,7 @@ const Products = () => {
                 products.map(product => <Product
                     key={product.id}
                     product={product}
+                    setTreatment = {setTreatment}
                 > </Product>)
             }
             </div>

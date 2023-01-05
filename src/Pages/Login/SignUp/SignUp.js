@@ -4,6 +4,7 @@ import auth from '../../../firebase.init';
 import { useForm } from "react-hook-form";
 import Loading from '../../Shared/Loading';
 import { Link, useNavigate } from 'react-router-dom';
+import useToken from '../../../hooks/useToken';
 
 
 const SignUp = () => {
@@ -18,6 +19,8 @@ const SignUp = () => {
     ] = useCreateUserWithEmailAndPassword(auth);
     let signInError;
 
+    const [token] = useToken(user || gUser);
+
     const navigate = useNavigate();
 
     if (loading || gLoading || updating) {
@@ -28,16 +31,14 @@ const SignUp = () => {
         signInError = <p className='text-red-500'><small>{error?.message || gError.message || updateError.message}</small></p>
     }
 
-    if (user || gUser) {
-        navigate('/')
-        console.log(user);
+    if (token) {
+        navigate('/home')
+       
     }
     const onSubmit = async (data) => {
-        console.log(data)
         await createUserWithEmailAndPassword(data.email, data.password);
         await updateProfile({ displayName:data.name });
         console.log('update done');
-        navigate('/home')
     };
     return (
         <div className='flex justify-center items-center my-20 h-screen'>
@@ -117,7 +118,7 @@ const SignUp = () => {
                         {signInError}
                         <input className='btn bg-red-500 text-white w-full max-w-xs' type="submit" value="Signup" />
                     </form>
-                    <p><small>Allready have an account?<Link className='text-secondary' to="/signup"> Please Login</Link></small></p>
+                    <p><small>Allready have an account?<Link className='text-secondary' to="/login"> Please Login</Link></small></p>
                     <div className="divider">OR</div>
                     <button
                         onClick={() => signInWithGoogle()}
