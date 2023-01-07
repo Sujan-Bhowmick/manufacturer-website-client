@@ -18,6 +18,7 @@ import RequireAdmin from './Pages/Login/RequireAdmin';
 import About from './Pages/Home/About/About';
 import Blogs from './Pages/Home/Blogs/Blogs';
 import AddReview from './Pages/Home/Add Review/AddReview';
+import Payment from './Pages/Dashboard/Payment';
 
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
           }>
           <Route index element={<MyProfile></MyProfile>}></Route>
           <Route path="orders" element={<MyOrders></MyOrders>}></Route>
+          <Route path="payment/:id" element={<Payment></Payment>}></Route>
           <Route path="users" element={<RequireAdmin><AllUser></AllUser></RequireAdmin>}></Route>
         </Route>
         <Route path='/login' element={<Login></Login>}></Route>

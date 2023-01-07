@@ -1,7 +1,8 @@
+import { Button } from 'bootstrap';
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import {  useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 const MyOrders = () => {
@@ -17,18 +18,18 @@ const MyOrders = () => {
                     authorization: `Bearer ${localStorage.getItem('accessToken')}`
                 }
             })
-            .then(res => {
-                console.log('res', res);
-                if(res.status === 401 || res.status === 403){
-                    signOut(auth)
-                    localStorage.removeItem('accessToken')
-                    navigate('/')
-                }
-                return res.json()
-            })
-            .then(data => {
-                setOrders(data);
-            })
+                .then(res => {
+                    console.log('res', res);
+                    if (res.status === 401 || res.status === 403) {
+                        signOut(auth)
+                        localStorage.removeItem('accessToken')
+                        navigate('/')
+                    }
+                    return res.json()
+                })
+                .then(data => {
+                    setOrders(data);
+                })
         }
 
     }, [user])
@@ -45,15 +46,20 @@ const MyOrders = () => {
                             <th>Name</th>
                             <th>Email</th>
                             <th>Product Name</th>
+                            <th>Payment</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                       orders?.map((order, index) => <tr key={order._id}>
-                                <th>{index+1}</th>
+                            orders?.map((order, index) => <tr key={order._id}>
+                                <th>{index + 1}</th>
                                 <td>{order.name}</td>
                                 <td>{order.email}</td>
                                 <td>{order.product_name}</td>
+                                <td>
+                                    {(order.price && !order.paid) && <Link to={`/dashboard/payment/${order._id}`}> <button className='btn btn-xs btn-primary'>Pay</button></Link>}
+                                    {(order.price && order.paid) && <Link to={``}> <span className='text-success'>Paid</span></Link>}
+                                </td>
                             </tr>)
                         }
                     </tbody>
