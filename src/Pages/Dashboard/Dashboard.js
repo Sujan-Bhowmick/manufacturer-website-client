@@ -10,7 +10,11 @@ const Dashboard = () => {
     const items = <>
         <li><Link className='font-bold btn btn-link' to="/dashboard">My Profile</Link></li>
         <li><Link className='font-bold btn btn-link' to="/dashboard/orders">MY Orders</Link></li>
-       {admin && <li><Link className='font-bold btn btn-link' to="/dashboard/users">All User</Link></li>}
+        {admin && <>
+            <li><Link className='font-bold btn btn-link' to="/dashboard/users">All User</Link></li>
+            <li><Link className='font-bold btn btn-link' to="/dashboard/add">Add Product</Link></li>
+        </>
+        }
     </>
     return (
         <div>
@@ -25,7 +29,7 @@ const Dashboard = () => {
                         </div> */}
                         <div className="flex-none hidden md:block lg:block">
                             <ul className="menu menu-vertical">
-                            {items}
+                                {items}
                             </ul>
                         </div>
                     </div>

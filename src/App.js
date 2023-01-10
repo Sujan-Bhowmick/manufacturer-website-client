@@ -19,6 +19,7 @@ import About from './Pages/Home/About/About';
 import Blogs from './Pages/Home/Blogs/Blogs';
 import AddReview from './Pages/Home/Add Review/AddReview';
 import Payment from './Pages/Dashboard/Payment';
+import AddProduct from './Pages/Dashboard/AddProduct';
 
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
           <Route path="orders" element={<MyOrders></MyOrders>}></Route>
           <Route path="payment/:id" element={<Payment></Payment>}></Route>
           <Route path="users" element={<RequireAdmin><AllUser></AllUser></RequireAdmin>}></Route>
+          <Route path="add" element={<RequireAdmin><AddProduct></AddProduct></RequireAdmin>}></Route>
         </Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
