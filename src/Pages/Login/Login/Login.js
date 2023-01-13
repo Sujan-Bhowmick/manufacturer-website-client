@@ -8,7 +8,7 @@ import useToken from '../../../hooks/useToken';
 
 const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
-    const { register, formState: { errors }, handleSubmit } = useForm();
+    const {register, formState: { errors }, handleSubmit} = useForm();
     const [
         signInWithEmailAndPassword,
         user,

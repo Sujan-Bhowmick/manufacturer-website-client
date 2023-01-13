@@ -25,6 +25,7 @@ const ProductDetails = () => {
             email: user.email,
             product_name: product.name,
             price: product.price,
+            quantity: event.target.quantity.value,
             phone: event.target.phone.value,
             address: event.target.address.value
         }
@@ -37,7 +38,6 @@ const ProductDetails = () => {
                 'content-type': 'application/json'
             },
             body: JSON.stringify(data)
-
         })
             .then(res => res.json())
             .then(result => {
@@ -105,6 +105,12 @@ const ProductDetails = () => {
                                 <span className="label-text">Price</span>
                             </label>
                             <input type="number" value={product.price} readOnly name='price' placeholder="Price" className="input input-bordered w-full" />
+                        </div>
+                        <div className="form-control w-96 max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Order Quantity</span>
+                            </label>
+                            <input type="number" name='quantity' placeholder="Order Quantity" className="input input-bordered w-full" />
                         </div>
                         <div className="form-control w-96 max-w-xs">
                             <label className="label">
