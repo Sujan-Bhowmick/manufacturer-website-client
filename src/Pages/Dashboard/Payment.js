@@ -10,7 +10,7 @@ const stripePromise = loadStripe('pk_test_51MCdnyEdQYVjfvABN9JHoXzB1SZTM9l7ahWKY
 
 const Payment = () => {
     const { id } = useParams();
-    const url = `http://localhost:5001/order/${id}`;
+    const url = `https://manufacturer-website-nvqi.onrender.com/order/${id}`;
     const { data: order, isLoading } = useQuery(['order', id], () => fetch(url, {
         method: 'GET',
         headers: {

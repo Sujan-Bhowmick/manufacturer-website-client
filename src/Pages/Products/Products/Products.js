@@ -7,7 +7,7 @@ const Products = () => {
     const [treatment, setTreatment] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:5001/product')
+        fetch('https://manufacturer-website-nvqi.onrender.com/product')
             .then(res => res.json())
             .then(data => setProducts(data));
     }, [])

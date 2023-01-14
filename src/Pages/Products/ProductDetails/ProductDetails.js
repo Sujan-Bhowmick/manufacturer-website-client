@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import './ProductDetail.css'
@@ -12,7 +11,7 @@ const ProductDetails = () => {
     const [user] = useAuthState(auth);
 
     useEffect(() => {
-        fetch(`http://localhost:5001/product/${productId}`)
+        fetch(`https://manufacturer-website-nvqi.onrender.com/product/${productId}`)
             .then(res => res.json())
             .then(data => setProduct(data));
 
@@ -31,7 +30,7 @@ const ProductDetails = () => {
         }
         console.log(data)
 
-        const url = 'http://localhost:5001/order'
+        const url = 'https://manufacturer-website-nvqi.onrender.com/order'
         fetch(url, {
             method: 'POST',
             headers: {
@@ -47,7 +46,7 @@ const ProductDetails = () => {
 
     // const onSubmit = async (data) => {
     //     console.log(data)
-    //     const url = 'http://localhost:5001/order'
+    //     const url = 'https://manufacturer-website-nvqi.onrender.com/order'
     //     fetch(url, {
     //         method: 'POST',
     //         headers: {

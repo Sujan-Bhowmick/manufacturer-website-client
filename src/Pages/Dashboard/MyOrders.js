@@ -14,7 +14,7 @@ const MyOrders = () => {
     const [deletingOrder, setDeletingOrder] = useState(null)
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5001/order?email=${user?.email}`, {
+            fetch(`https://manufacturer-website-nvqi.onrender.com/order?email=${user?.email}`, {
                 method: 'GET',
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -40,7 +40,7 @@ const MyOrders = () => {
 
    window.confirm('Are you sure?');
         // if (proceed) {
-        fetch(`http://localhost:5001/order/${id}`, {
+        fetch(`https://manufacturer-website-nvqi.onrender.com/order/${id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

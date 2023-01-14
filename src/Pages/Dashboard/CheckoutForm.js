@@ -14,7 +14,7 @@ const CheckoutForm = ({ order }) => {
     const { price, name, email, _id } = order;
 
     useEffect(() => {
-        fetch('http://localhost:5001/create-payment-intent', {
+        fetch('https://manufacturer-website-nvqi.onrender.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -80,7 +80,7 @@ const CheckoutForm = ({ order }) => {
                 order: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`http://localhost:5001/order/${_id}`, {
+            fetch(`https://manufacturer-website-nvqi.onrender.com/order/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

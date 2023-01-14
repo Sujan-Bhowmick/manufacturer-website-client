@@ -4,7 +4,7 @@ import Loading from '../Shared/Loading';
 import UserRow from './UserRow';
 
 const AllUser = () => {
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5001/user', {
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://manufacturer-website-nvqi.onrender.com/user', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

@@ -31,7 +31,7 @@ const AddProduct = () => {
                     }
                     // send to your database
 
-                    const url = 'http://localhost:5001/product';
+                    const url = 'https://manufacturer-website-nvqi.onrender.com/product';
                         fetch(url,{
                             method: 'POST',
                                     headers: {
@@ -59,7 +59,7 @@ const AddProduct = () => {
     }
     
     // const onSubmit = async (data) => {
-    //     const url = 'http://localhost:5001/product';
+    //     const url = 'https://manufacturer-website-nvqi.onrender.com/product';
     //     fetch(url,{
     //         method: 'POST',
     //                 headers: {

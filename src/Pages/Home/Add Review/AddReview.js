@@ -31,7 +31,7 @@ const AddReview = () => {
                     }
                     // send to your database
 
-                    const url = 'http://localhost:5001/review';
+                    const url = 'https://manufacturer-website-nvqi.onrender.com/review';
                     fetch(url, {
                         method: 'POST',
                         headers: {
